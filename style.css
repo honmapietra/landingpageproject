@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #82908a;
+  background: #fff;
+}
+
+a {
+  color: #82908a;
+  text-decoration: none;
+}
+
+/* MENU */
+
+.logo {
+  color: #b60303;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.nav-menu {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  padding: 1.25rem 0 1.25rem 0;
+}
+
+.hamburguer {
+  width: 2em;
+  height: 2em;
+  margin: 1em;
+  margin-top: 27px;
+}
+
+label {
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  display: block;
+  height: 22px;
+  width: 30px;
+}
+
+label span {
+  position: absolute;
+  display: block;
+  height: 5px;
+  width: 100%;
+  border-radius: 30px;
+  background: #82908a;
+  transition: 0.5s ease-in-out;
+}
+
+label span:nth-child(1) {
+  top: 0;
+}
+
+label span:nth-child(2) {
+  top: 8px;
+}
+
+label span:nth-child(3) {
+  top: 16px;
+}
+
+#checkbox-menu:checked + label span:nth-child(1) {
+  transform: rotate(-45deg);
+  top: 8px;
+}
+
+#checkbox-menu:checked + label span:nth-child(2) {
+  opacity: 0;
+}
+
+#checkbox-menu:checked + label span:nth-child(3) {
+  transform: rotate(45deg);
+  top: 8px;
+}
+
+#checkbox-menu {
+  position: absolute;
+  opacity: 0;
+}
+
+#aside-menu {
+  z-index: 0;
+  position: fixed;
+  top: 0;
+  background: #0c0c0c9e;
+  color: white;
+  padding: 2rem;
+  bottom: 0;
+  width: 200px;
+  text-align: center;
+  right: -200px;
+  transition: 0.5s ease;
+}
+
+#aside-menu div {
+    margin-top: 55px;
+    cursor: pointer;
+}
+
+#checkbox-menu:checked ~ #aside-menu {
+  right: 0;
+}
+/* FIM MENU */
+
+.title {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.1;
+  text-decoration: underline;
+  color: #b60303;
+}
+.title-under {
+  color: #82908a;
+}
+
+.nihon {
+  background-image: url(images/imagenihon.jpg);
+  margin-left: 93px;
+  width: 69%;
+  height: 338px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+}
+
+.intro-title {
+  background: white;
+  padding: 2rem;
+  margin-top: 91px;
+}
+
+.description p {
+    margin-left: 160px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .description p {
+    margin-left: 91px;
+}
+}
+
+@media (max-width: 425px) {
+  .nihon {
+  margin-left: 60px;
+  width: 76%
+  }
+  .intro-title {
+    padding: 5px;
+    margin-top: 169px;
+  }
+  .description p {
+    margin: auto;
+  }
+}
+
+@media (max-width: 320px) {
+  .nihon {
+    margin-left: 32px;
+    width: 79%;
+ }
+ .intro-title {
+  background: none;
+  margin-top: 219px;
+ }
+}
